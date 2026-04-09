@@ -1,5 +1,5 @@
 # ./app/spam.py
-def check_spam(text: str) -> tuple[str, int]:
+def check_spam(text: str) -> str:
     text = text.lower().strip()
     if text == "":
         return "ham", 0
@@ -13,3 +13,6 @@ def check_spam(text: str) -> tuple[str, int]:
         if kw in text:
             hit += 1
     return ("spam" if hit >= 2 else "ham", hit)
+
+
+check_spam_rules = check_spam
