@@ -33,15 +33,18 @@ def home():
 class ClassifyRequest(BaseModel):
     text: str
 
+
 @app.post("/classify")
 async def classify(payload: ClassifyRequest):
     text = payload.text
     # (A) 요청 들어온 것 자체를 기록: 언제(로그시간) / 무엇(endpoint) / 어떤 입력
     logger.info(f"CALL /classify | text='{text}' | len={len(text)}")
+
     try:
         if text == "crash":
             raise RuntimeError("의도적 장애 추가")
         label, score = check_spam(text)
+
         # (B) 정상 처리 결과도 짧게 기록
         logger.info(f"OK /classify | label={label} score={score}")
     except Exception as e:
