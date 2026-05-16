@@ -1,0 +1,23 @@
+artifact_path: /Users/seung-won/Desktop/pipeline/SpamCheck/mlruns/1/models/m-40743630ac3940a68b5faf0670b20b24/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-40743630ac3940a68b5faf0670b20b24
+model_size_bytes: 1398
+model_uuid: m-40743630ac3940a68b5faf0670b20b24
+prompts: null
+run_id: 60a58af5f6d9426d9f7da2a25465836f
+utc_time_created: '2026-05-16 09:45:27.562919'
